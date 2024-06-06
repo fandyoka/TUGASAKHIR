@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FandyokaMusik</title>
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--feather icon-->
+    <script>
+    function search() {
+        // Ambil nilai dari input pencarian
+        var input = document.getElementById('search-input').value.toLowerCase();
+        // Loop melalui semua menu-card
+        var cards = document.querySelectorAll('.menu-card');
+        cards.forEach(card => {
+            var title = card.querySelector('.menu-card-title').innerText.toLowerCase();
+            // Jika judul menu-card cocok dengan input pencarian, tampilkan kartu, jika tidak, sembunyikan
+            if (title.includes(input)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    document.getElementById('search-input').addEventListener('input', search);
+    </script>
+
+    <!--style-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--navbar start-->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Fandyoka<span> Musik</span></a>
+
+        <div class="navbar-nav">
+            <a href="#">Home</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Kontak</a>
+        </div>
+
+        <div class="navbar-extra">
+            <input type="text" id="search-input" placeholder="Cari gitar...">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+    <!--navbar end-->
+
+    <!--Hero Section start-->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Toko jual dan beli <span>Gitar</span></h1>
+            <p>Kami menyediakan Gitar dengan kualitas yang terbaik</p>
+            <a href="#menu" class="cta">Beli Sekarang</a>
+        </div>
+    </section>
+    <!--Hero Section end-->
+
+    <!--About Section start-->
+    <section id="about" class="about">
+        <h2><span>Tentang</span> Kami</h2>
+        <div class="row">
+            <div class="about-img">
+                <img src="gitar2.jpg" alt="Gitar Taylor">
+            </div>
+            <div class="content">
+                <h3>Mengapa beli di toko kami?</h3>
+                <p>Membeli gitar di toko yang bagus memastikan Anda mendapatkan produk berkualitas dari merek terpercaya, dengan pilihan yang luas dan fasilitas uji coba. Staf yang berpengetahuan dapat memberikan saran profesional, serta toko tersebut biasanya menawarkan garansi dan layanan purna jual yang baik. Selain itu, reputasi yang baik, keamanan transaksi, dan aksesori tambahan menjadikan pengalaman pembelian lebih aman dan memuaskan. Toko yang bagus juga sering menjadi pusat komunitas musisi lokal, memberikan Anda kesempatan untuk berinteraksi dan belajar dari sesama musisi.</p>
+            </div>
+        </div>
+    </section>
+    <!--About Section end-->
+
+    <!--Menu Section start-->
+    <section href="#shopping-cart" id="menu" class="menu">
+        <h2>Menu <span>Gitar</span></h2>
+        <div class="row">
+            <div class="menu-card" id="Fender">
+                <img src="toyamakanna-zM9SpeN_3Lc-unsplash.jpg" alt="Fender" class="menu-card-img">
+                <h3 class="menu-card-title">Fender Stratocaster</h3>
+                <p class="menu-card-price">IDR 9.000.000</p>
+            </div>
+            <div class="menu-card" id="Gibson">
+                <img src="matthijs-smit-N-VDzD5z71E-unsplash.jpg" alt="Gibson" class="menu-card-img">
+                <h3 class="menu-card-title">Gibson</h3>
+                <p class="menu-card-price">IDR 15.500.000</p>
+            </div>
+            <div class="menu-card" id="Taylor">
+                <img src="brent-ninaber-jQ9RNHQVGVg-unsplash.jpg" alt="Taylor" class="menu-card-img">
+                <h3 class="menu-card-title">Taylor</h3>
+                <p class="menu-card-price">IDR 22.000.000</p>
+            </div>
+            <div class="menu-card" id="Squier">
+                <img src="polygon-group-oxMhZ1cQAIg-unsplash.jpg" alt="Squier" class="menu-card-img">
+                <h3 class="menu-card-title">Squier Affinity</h3>
+                <p class="menu-card-price">IDR 8.500.000</p>
+            </div>
+            <div class="menu-card" id="Cort">
+                <img src="toyamakanna-n2SnLJaMWRw-unsplash.jpg" alt="Cort" class="menu-card-img">
+                <h3 class="menu-card-title">Cort</h3>
+                <p class="menu-card-price">IDR 5.600.000</p>
+            </div>
+        </div>
+    </section>
+    <!--Menu Section end-->
+
+    <!--Contact Section start-->
+    <section id="contact" class="contact">
+        <h2><span>Kontak </span>Kami</h2>
+        <li><span>Instagram:</span> <a href="https://www.instagram.com/fandyokaa" target="_blank">@fandyokaa</a></li>
+        <li><span>WhatsApp:</span> <a href="https://wa.me/081273284646" target="_blank">081273284646</a></li>
+        <li><span>Email:</span> <a href="mailto:email@fandyoka2604.com">@fandyoka2604.com</a></li>
+    </section>
+   
+    <!--Contact Section end-->
+
+
+    <!--feather icon -->
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
